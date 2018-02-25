@@ -1,0 +1,67 @@
+from easygui import *
+
+name = enterbox("Hello , Please Enter your name  ")
+if name == None or name == "":
+   msgbox("Please enter your name ")
+else:
+      msgbox(" Welcome to a Simple Calculator "  + name , "!")
+def add(x, y):  #This function adds two numbers
+
+   return x + y
+
+def subtract(x, y): #This function subtracts two numbers
+
+   return x - y
+
+def multiply(x, y):  #This function multiplies two numbers
+
+   return x * y
+
+def divide(x, y):  #This function divides two numbers
+
+   return x / y
+
+              
+while True:    # this the continuos asking to calculate
+    print("Below the list of possible operations, please follow the instructions ")
+    print("1.Add")
+    print("2.Subtract")
+    print("3.Multiply")
+    print("4.Divide")
+    #user input
+
+    int1 = raw_input("Enter first number to calculate, or type Done to quit  ")
+    if int1=="Done": # This statement will check if user wants to quit an app
+       print("OK We are Done , Have a good Day")
+       break
+    try: # this try except statement checks if user enters number or letters
+        int1 = int(int1)
+    except ValueError:
+        print "You enter non Integer value, please enter Integer Value first number!"
+    else:
+        int2 = raw_input("Enter second number to calculate: ")
+        try: # this try except statement checks if user enters number or letters
+            int2 = int(int2)
+        except ValueError:
+            print "You enter non Integer value, please enter Integer Value for second number!"
+        else:
+            mychoice = input("Enter choice(1/2/3/4):")
+# Main program action
+            if mychoice == 1:
+                print("The result is ", int1,"+",int2,"=", add(int1,int2))
+
+            elif mychoice == 2:
+               print( "The result is " ,int1,"-",int2,"=", subtract(int1,int2))
+
+            elif mychoice == 3:
+               print("The result is ",int1,"*",int2,"=", multiply(int1,int2))
+
+            elif mychoice == 4:
+               print("The result is ",int1,"/",int2,"=", divide(int1,int2))
+
+            elif mychoice >4 :
+                print "Please enter number from 1 to 4"
+
+            else:
+                None
+
